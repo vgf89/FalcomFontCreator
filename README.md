@@ -1,5 +1,24 @@
+# Changed in this fork:
+- Use built-in font metrics to render glyphs (fixes spacing when processing JP fonts).
+- Change "Base" setting to instead be an offset from the font's built-in baseline.
+- Includes a config_font.ini for recreating the original Trails of Cold Steel JP font in HD (you will need to source the font yourself).
+- Saves the resulting file to font.itf instead of font_us.itf.
+- Add a Makefile to trivialize the build process
+- Removed the static headers for FreeType2 etc, as that should be provided by your system
+    - On Fedora, dependincies include `freetype-devel libicu-devel`
+
+# このフォークでの変更点:
+- グリフのレンダリングに内蔵のフォントメトリクスを使用（日本語フォント処理時の間隔の問題を修正）。
+- 「Base」の設定を、フォント内蔵のベースラインからのオフセットに変更。
+- 『英雄伝説 閃の軌跡』オリジナルの日本語フォントをHDで再現するための config_font.ini を同梱（フォント自体は各自で用意する必要があります）。
+- 出力ファイルの保存先を font_us.itf ではなく font.itf に変更。
+- ビルド工程を簡略化するため Makefile を追加。
+- FreeType2 などの静的ヘッダーを削除（システム側のライブラリを使用するように変更）。
+    - Fedora の場合、依存関係には `freetype-devel libicu-devel` が含まれます。
+
+
 # FalcomFontCreator
-A simple tool to generate a .itf font file from a .ttf (TrueType font) file. Those fonts are used in recent Falcom games such as Trails of Cold Steel or Tokyo Xanadu.
+A simple tool to generate a .itf font file from a .ttf/.otf file. Those fonts are used in recent Falcom games such as Trails of Cold Steel or Tokyo Xanadu.
 Please don't take this tool "too" seriously, I didn't spend that much time studying it, I can't explain everything in the font file, but I have a general understanding of the file structure and thus the output file should work.
 
 # How to use
