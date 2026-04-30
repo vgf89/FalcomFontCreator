@@ -485,15 +485,13 @@ int main( int     argc,
 	if ( writeFontFile ) {
 	writeFontFile.write((const char*)&buffer_font_file[0], buffer_font_file.size());
 	writeFontFile.close();
-	std::cout << "SUCCESS!";
+	std::cout << "SUCCESS!\n";
 	}
 	else {
-	   std::cout << "FAIL!";
-
+	    std::cout << "FAIL!\n";
+		return 1;
 	}
-	scanf("%d");
-
-	  return 0;
+	return 0;
 }
 
 /* EOF */
